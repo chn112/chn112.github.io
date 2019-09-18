@@ -435,6 +435,222 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/二进制的转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chn112">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chn112">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/30/二进制的转换/" itemprop="url">二进制的运算</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-30T11:23:44+08:00">
+                2019-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2019/03/30/二进制的转换/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://yoursite.com/2019/03/30/二进制的转换/" class="cy_cmt_count" data-xid="2019/03/30/二进制的转换/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2019/03/30/二进制的转换/" class="leancloud_visitors" data-flag-title="二进制的运算">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+
+      
+      
+
+      
+        
+          
+            <h1 id="二进制位运算"><a href="#二进制位运算" class="headerlink" title="二进制位运算"></a>二进制位运算</h1><ol>
+<li>按位与（&amp;）<br>  位运算实质是将参与运算的数字转换为二进制，而后逐位对应进行运算。</li>
+</ol>
+<p>  按位与运算为：两位全为1，结果为1，即1&amp;1=1，1&amp;0=0，0&amp;1=0，0&amp;0=0。</p>
+<p>  例如51 &amp; 5 -&gt; 00110011 &amp; 00000101 = 00000001 -&gt; 51 &amp; 5 = 1</p>
+<p>&lt; !–more–&gt;<br>  特殊用法：</p>
+<p>  （1）与0相与可清零。</p>
+<p>  （2）与1相与可保留原值，可从一个数中取某些位。例如需要取10101110中的低四位，10101110 &amp; 00001111 = 00001110，即得到所需结果。</p>
+<ol start="2">
+<li>按位或（|）<br>  两位只要有一位为1，结果则为1，即1|1=1，1|0=1，0|1=1，0|0=0。</li>
+</ol>
+<p>  特殊用法：</p>
+<p>  （1）与0相或可保留原值。</p>
+<p>  （2）与1相或可将对应位置1。例如，将X=10100000的低四位置1，使X | 00001111 = 10101111即可。</p>
+<ol start="3">
+<li>异或运算（^）<br>  两位为“异”，即一位为1一位为0，则结果为1，否则为0。即1^1=1，1^0=0，0^1=0，0^0=1。</li>
+</ol>
+<p>  特殊用法：</p>
+<p>  （1）使指定位翻转：找一个数，对应X要翻转的各位为1，其余为0，使其与X进行异或运算即可。例如，X=10101110，使低四位翻转，X ^ 00001111 = 10100001。</p>
+<p>  （2）与0相异或保留原值。例如X ^ 00000000 = 10101110。</p>
+<p>  （3）交换两变量的值。（比借助容器法、加减法效率高）原理：一个数对同一个数连续两次进行异或运算，结果与这个数相等。</p>
+<p>  因此，交换方法为：A = A ^ B，B = A ^ B，A = A ^ B。</p>
+<ol start="4">
+<li><p>取反（<del>）<br>  将一个数按位取反，即</del> 0 = 1，~ 1 = 0。</p>
+</li>
+<li><p>左移（&lt;&lt;）<br>  将一个数左移x位，即左边丢弃x位，右边用0补x位。例：11100111 &lt;&lt; 2 = 10011100。</p>
+</li>
+</ol>
+<p>拓展：<br>==原码==：一个整数按照绝对值大小转换为二进制即为原码；<br>==反码==：将二进制数按位取反，得到的即为反码；<br>==补码==：反码加1即为补码。<br>==由于计算机底层硬件的限制，负数均使用补码表示。==</p>
+<p>  若左移时舍弃的高位全为0，则每左移1位，相当于该数十进制时乘一次2。</p>
+<p>  例：11(1011) &lt;&lt; 2 = 44（11表示为1011时实际上不完整，若计算机中规定整型的大小为32bit，则11的完整二进制形式为00000000 00000000 0000000 00001011）</p>
+<ol start="6">
+<li>右移（&gt;&gt;）<br>  将一个数右移若干位，右边舍弃，正数左边补0，负数左边补1。每右移一位，相当于除以一次2。</li>
+</ol>
+<p>  例：4 &gt;&gt; 2 = 1，-14 &gt;&gt; 2 = -4。</p>
+<ol start="7">
+<li>无符号右移（&gt;&gt;&gt;）<br>  将一个数右移若干位，左边补0，右边舍弃。</li>
+</ol>
+<p>  例：-14 &gt;&gt;&gt; 2 = (11111111 11111111 11111111 11110010) &gt;&gt;&gt; 2 = (00111111 11111111 11111111 11111100) = 1073741820</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+    
+
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/嵌入式开发之Linux基本操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -861,7 +1077,7 @@ window.onmouseout = function () {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
